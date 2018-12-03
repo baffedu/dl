@@ -8,7 +8,7 @@ services:
     environment:
       - VIRTUAL_HOST=${APP_HOST}
     external_links:
-      - mysql_master_1:mysql.dl.baffedu.com
+      - mysql.dl.baffedu.com:mysql_master_1
 
 # when telnet other service, you may need to configure firewalld
 # docker network create --driver=bridge --subnet=10.50.0.0/16 baffedu
