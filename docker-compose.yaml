@@ -5,6 +5,7 @@ services:
     image: tomcat:7.0-alpine
     volumes:
       - ${APP_PATH}:/usr/local/tomcat/webapps
+      - ${APP_CONF_PATH}/conf/server.xml:/usr/local/tomcat/conf/server.xml
     environment:
       - VIRTUAL_HOST=${APP_HOST}
       - VIRTUAL_PORT=8080
