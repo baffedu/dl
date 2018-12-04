@@ -12,7 +12,7 @@ services:
       - VIRTUAL_HOST=${APP_HOST}
       - VIRTUAL_PORT=8080
       - JAVA_OPTS=-DJAVA_ENV=production
-      - CATALINA_OPTS=-server -Xms3072m -Xmx3072m -Xss768K
+      # - CATALINA_OPTS=-server -Xms3072m -Xmx3072m -Xss768K
     ports:
       - 8877:8877
     external_links:
