@@ -11,7 +11,7 @@ services:
     environment:
       - VIRTUAL_HOST=${APP_HOST}
       - VIRTUAL_PORT=8080
-      - JAVA_OPTS="-DJAVA_ENV=production -Xms1024m -Xmx2048m -Xss1024K -XX:PermSize=512m -XX:MaxPermSize=1024m"
+      - JAVA_OPTS="-DJAVA_ENV=production -Xms1773m -Xmx5012m -Xss1024K -XX:PermSize=512m -XX:MaxPermSize=1024m"
     ports:
       - 8877:8877
     external_links:
