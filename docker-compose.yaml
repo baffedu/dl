@@ -2,17 +2,17 @@ version: "3.3"
 
 services:
   app:
-    image: tomcat:7.0-alpine
+    image: jeanblanchard/tomcat:tomcat7-java7
     volumes:
-      - ${APP_PATH}:/usr/local/tomcat/webapps
-      - ${APP_CONF_PATH}/server.xml:/usr/local/tomcat/conf/server.xml
+      - ${APP_PATH}:/opt/tomcat/webapps
+      - ${APP_CONF_PATH}/server.xml:/opt/tomcat/conf/server.xml
       - /usr/share/fonts/truetype:/usr/share/fonts/truetype
       - /usr/local/bin/ffmpeg:/usr/local/bin/ffmpeg
     environment:
       - VIRTUAL_HOST=${APP_HOST}
       - VIRTUAL_PORT=8080
       - JAVA_OPTS=-DJAVA_ENV=production -Duser.timezone=GMT+08 -Djava.security.egd=file:/dev/./urandom
-      - CATALINA_OPTS=-server -Xms3072m -Xmx3072m -Xss768K
+      - CATALINA_OPTS=-server -Xms1024m -Xmx2048m -Xss1024K -XX:PermSize=512m -XX:MaxPermSize=1024m
     ports:
       - 8877:8877
     external_links:
