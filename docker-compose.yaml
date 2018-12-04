@@ -12,7 +12,7 @@ services:
       - VIRTUAL_HOST=${APP_HOST}
       - VIRTUAL_PORT=8080
       - JAVA_OPTS=-server -Xms1024m -Xmx2048m -Xss1024K -XX:PermSize=512m -XX:MaxPermSize=1024m
-      - CATALINA_OPTS=-DJAVA_ENV=production
+      - JSSE_OPTS=-DJAVA_ENV=production
     ports:
       - 8877:8877
     external_links:
