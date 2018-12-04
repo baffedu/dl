@@ -7,6 +7,7 @@ services:
       - ${APP_PATH}:/usr/local/tomcat/webapps
       - ${APP_CONF_PATH}/server.xml:/usr/local/tomcat/conf/server.xml
       - /usr/share/fonts/truetype:/usr/share/fonts/truetype
+      -/usr/local/bin/ffmpeg:/usr/local/bin/ffmpeg
     environment:
       - VIRTUAL_HOST=${APP_HOST}
       - VIRTUAL_PORT=8080
