@@ -17,10 +17,12 @@ services:
       - 8877:8877
     external_links:
       - mysql_master_1:mysql.dl.baffedu.com
-  web:
+  upload:
     image: nginx:1.15-alpine
     volumes:
-      - ${WEB_PATH}:/usr/share/nginx/html
+      - ${UPLOAD_PATH}:/usr/share/nginx/html
+    environment:
+      - VIRTUAL_HOST=upload.dl.baffedu.com
 
 # when telnet other service, you may need to configure firewalld
 # docker network create --driver=bridge --subnet=10.50.0.0/16 baffedu
