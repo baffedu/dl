@@ -17,6 +17,7 @@ services:
       - 8877:8877
     external_links:
       - mysql_master_1:mysql.dl.baffedu.com
+    cpu_shares: 2048
   app_bak:
     image: jeanblanchard/tomcat:tomcat7-java7
     volumes:
@@ -31,6 +32,7 @@ services:
       - CATALINA_OPTS=-server -Xms1024m -Xmx2048m -Xss1024K -XX:PermSize=512m -XX:MaxPermSize=1024m
     external_links:
       - mysql_master_1:mysql.dl.baffedu.com
+    cpu_shares: 2048
   upload:
     image: nginx:1.15-alpine
     volumes:
